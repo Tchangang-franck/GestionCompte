@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use GuzzleHttp\Promise\Create;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/**
+ * 
+ */
+Route::get('/register',[RegisterController::class, 'create'])->name('register');
+Route::post('/register',[RegisterController::class, 'register'])->name('register1');
+Route::get('/login',[LoginController::class, 'create'])->name('login');
+Route::post('/login',[LoginController::class, 'authenticate'])->name('authenticate');
+
+
+Route::view('/dashboard','dashboard');
