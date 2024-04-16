@@ -17,11 +17,7 @@ class LoginController extends Controller
      * this method authenticates a user by their password and email
      */
     public function authenticate(Request $request):RedirectResponse{
-        $data= Validator::make($request->all(),[
-            'email'=>['required','email'],
-            'password'=>['required']
-        ]);
-        // dd($data);
+        $data=$request->only('email','password');
         if(Auth::attempt($data)){
             $request->session()->regenerate();
             return redirect()->intended('dashboard');
@@ -36,7 +32,7 @@ class LoginController extends Controller
     /**
      * this method allows you to disconnect the user from the page
      */
-    public function logOut(Request $request){
+    public function logout(Request $request){
         Auth::logout();
         $request->session()->invalidate();
         return redirect('/');

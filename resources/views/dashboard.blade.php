@@ -16,7 +16,7 @@
       <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Login</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" aria-selected="false">Logout</button>
+      <a href="{{ route('logout') }}">Logout</a>
     </li>
   </ul>
   
