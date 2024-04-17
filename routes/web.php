@@ -4,6 +4,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +29,8 @@ Route::post('/register',[RegisterController::class, 'register'])->name('register
 Route::get('/login',[LoginController::class, 'create'])->name('login');
 Route::post('/login',[LoginController::class, 'authenticate'])->name('authenticate');
 Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
-Route::view('/dashboard','dashboard');
+Route::get('/dashboard',function(){
+    $users=User::all();
+    return view('dashboard',['users'=>$users]);
+});
 // Route::get('/dashboard',[LoginController::class, 'authenticate'])->middleware('auth.basic')->name('authenticate1');

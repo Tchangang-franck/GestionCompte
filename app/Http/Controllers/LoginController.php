@@ -13,6 +13,7 @@ class LoginController extends Controller
     public function create(){
         return view('Auth.login');
     }
+
     /**
      * this method authenticates a user by their password and email
      */
@@ -25,8 +26,10 @@ class LoginController extends Controller
         return back()->withErrors([
             'email'=>"the provided credential do not match ou record.",
         ])->onlyInput('email');
-
-        
+    /**
+     * retrieve all user in database to display them
+     */
+        $users=User::all();
     }
 
     /**
