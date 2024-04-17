@@ -28,4 +28,5 @@ Route::post('/register',[RegisterController::class, 'register'])->name('register
 Route::get('/login',[LoginController::class, 'create'])->name('login');
 Route::post('/login',[LoginController::class, 'authenticate'])->name('authenticate');
 Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
-Route::get('/dashboard',[LoginController::class, 'authenticate'])->middleware('auth.basic')->name('authenticate1');
+Route::view('/dashboard','dashboard');
+// Route::get('/dashboard',[LoginController::class, 'authenticate'])->middleware('auth.basic')->name('authenticate1');
