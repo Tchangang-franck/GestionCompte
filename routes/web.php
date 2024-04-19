@@ -19,10 +19,6 @@ use Spatie\Permission\Models\Permission;
 */
 
 Route::get('/', function () {
-    // $user=auth()->user();
-    //  $userrole=$user->assignRole('user');
-    // dump($user);
-    //  dump($userrole);
     return view('welcome');
 });
 
