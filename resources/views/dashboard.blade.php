@@ -17,12 +17,9 @@
                 @endif                
             </div>
         </div>
-    </div>    
-    @if(auth()->user()->hasRole('user'))
-    <p style="text-align: center"> Bienvenue <strong> {{ Auth::user()->name }}</strong></p>
-    @endif
+    </div> 
 </div>
-    @if(auth()->user()->hasRole('admin'))
+    @role('admin')
     <table class="table">
   <thead>
     <tr>
@@ -41,5 +38,7 @@
     @endforeach
   </tbody>
 </table>
-@endif
+@else
+    <p style="text-align: center"> Bienvenue <strong> {{ Auth::user()->name }}</strong></p>
+@endrole
 @endsection

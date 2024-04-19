@@ -5,7 +5,8 @@ use App\Http\Controllers\RegisterController;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
-
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +19,10 @@ use App\Models\User;
 */
 
 Route::get('/', function () {
+    // $user=auth()->user();
+    //  $userrole=$user->assignRole('user');
+    // dump($user);
+    //  dump($userrole);
     return view('welcome');
 });
 

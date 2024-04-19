@@ -26,6 +26,12 @@ class LoginController extends Controller
         return back()->withErrors([
             'email'=>"the provided credential do not match ou record.",
         ])->onlyInput('email');
+        /**
+         * this function searches for the authentifer user with 
+         * 1 as identifier and attributes the admin role to him
+         */
+        $user=User::find(1);
+        $user->assingRole('admin');
     /**
      * retrieve all user in database to display them
      */

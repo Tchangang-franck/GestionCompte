@@ -33,6 +33,6 @@ class RegisterController extends Controller
             'password_confirmation'=>Hash::make($request->confirmation_password)
         ]);
         $user->save();
-        return redirect('/dashboard');
+        return redirect('/login');
      }
 }

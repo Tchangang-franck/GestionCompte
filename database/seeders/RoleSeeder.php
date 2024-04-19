@@ -15,11 +15,6 @@ class RoleSeeder extends Seeder
      */
     public function run(): void
     {
-        // $admin=User::create([
-        //     'name'=>'admin',
-        //     'email'=>'admin@gmail.com',
-        //     'password'=>Hash::make('password'),
-        // ]);
         $adminRole=Role::create([
             'name'=>'admin',
             'guard_name'=>'web',
@@ -28,5 +23,12 @@ class RoleSeeder extends Seeder
             'name'=>'user',
             'guard_name'=>'web',
         ]);
+
+        $admin=User::create([
+            'name'=>'admin',
+            'email'=>'admin@gmail.com',
+            'password'=>Hash::make('password'),
+        ]);
+        $admin->assignRole('admin');
     }
 }
