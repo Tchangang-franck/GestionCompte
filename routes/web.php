@@ -25,13 +25,13 @@ Route::get('/', function () {
 /**
  * 
  */
-Route::get('/register',[RegisterController::class, 'create'])->name('register');
-Route::post('/register',[RegisterController::class, 'register'])->name('register1');
-Route::get('/login',[LoginController::class, 'create'])->name('login');
-Route::post('/login',[LoginController::class, 'authenticate'])->name('authenticate');
-Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
-Route::get('/dashboard',function(){
-    $users=User::all();
-    return view('dashboard',['users'=>$users]);
-});
+// Route::get('/register',[RegisterController::class, 'create'])->name('register');
+// Route::post('/register',[RegisterController::class, 'register'])->name('register1');
+// Route::get('/login',[LoginController::class, 'create'])->name('login');
+// Route::post('/login',[LoginController::class, 'authenticate'])->name('authenticate');
+// Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
+// Route::get('/dashboard',function(){
+//     $users=User::all();
+//     return view('dashboard',['users'=>$users]);
+// });
 // Route::get('/dashboard',[LoginController::class, 'authenticate'])->middleware('auth.basic')->name('authenticate1');
