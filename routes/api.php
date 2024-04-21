@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,14 +15,14 @@ use App\Http\Controllers\ApiController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 // Route::get('api/index',[ApiController::class, 'index'])->name('index');
 // Route::get('api/index/{id}',[ApiController::class, 'edit'])->name('edit');
 // Route::post('api/create',[ApiController::class, 'store'])->name('create');
 // Route::put('api/update{id}',[ApiController::class, 'update'])->name('update');
 // Route::delete('api/delete',[ApiController::class, 'delete'])->name('delete');
+Route::get('/users',[ApiController::class, 'ApiController@index']);
 Route::apiResource('users',ApiController::class);
-

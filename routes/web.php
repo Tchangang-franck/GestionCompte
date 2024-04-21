@@ -36,4 +36,4 @@ Route::get('/', function () {
 //     return view('dashboard',['users'=>$users]);
 // });
 // Route::get('/dashboard',[LoginController::class, 'authenticate'])->middleware('auth.basic')->name('authenticate1');
-Route::apiResource('users',ApiController::class);
+
