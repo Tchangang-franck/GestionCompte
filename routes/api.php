@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ApiController;
-use App\Models\User;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,5 +24,5 @@ use App\Models\User;
 // Route::post('api/create',[ApiController::class, 'store'])->name('create');
 // Route::put('api/update{id}',[ApiController::class, 'update'])->name('update');
 // Route::delete('api/delete',[ApiController::class, 'delete'])->name('delete');
-Route::get('/users',[ApiController::class, 'ApiController@index']);
+
 Route::apiResource('users',ApiController::class);
